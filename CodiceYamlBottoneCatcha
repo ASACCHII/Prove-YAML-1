@@ -1,0 +1,15 @@
+- name: Test del nuovo endpoint captcha
+  request:
+    url: https://api.example.com/captcha
+    method: POST
+    headers:
+      Content-Type: application/json
+    body:
+      mode: raw
+      raw_text: '{"username": "example_user", "password": "example_password"}'
+  response:
+    - status: 200
+      body:
+        json:
+          success: true
+          captcha_token: "example_token"
